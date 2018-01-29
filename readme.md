@@ -4,3 +4,4 @@
 1. Start up `mongod` in your terminal
 2. Run `npm install`
 3. Run `npm start`
+4. Go to your friendly `localhost:5000`
