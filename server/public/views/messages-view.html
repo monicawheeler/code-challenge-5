@@ -25,6 +25,9 @@
                 <h3>{{ message.name }}</h3>
                 <h4>{{ message.message }}</h4>
                 <p>{{ message.date | date: 'M/d/yy h:mm a' }}</p>
+                <md-button class="md-icon-button" aria-label="Delete">
+                <md-icon ng-click="vm.deleteMessage(message._id)"><i class="far fa-trash-alt"></i></md-icon>
+                </md-button>
             </div>
         </md-list-item>
     </md-list>
