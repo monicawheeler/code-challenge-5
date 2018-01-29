@@ -2,8 +2,17 @@ myApp.controller("MessagesController", ['MessagesService', function(MessagesServ
 	console.log('MessagesController loaded');
 	
 	const self = this;
+	
+	self.messagesReturned = MessagesService.messagesReturned;
 
-	//Verify service is working and shared with the views
-	self.message = MessagesService.message;
+	// run the getMessages function
+	self.getMessages = function() {
+		MessagesService.getMessages();
+	}
+
+    // run the submitMessages function
+    self.submitMessage = function(message) {
+		MessagesService.submitMessage(message);
+	  }
 
 }]);

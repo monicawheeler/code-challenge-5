@@ -1,1 +1,17 @@
 <!-- HTML here for your view -->
+
+<md-content layout-padding>
+    <md-input-container layout="row">
+        <label>Name</label>
+        <input ng-model="vm.messages.name">
+    </md-input-container>
+    <md-input-container layout="row" flex="100">
+      <label>Message</label>
+      <textarea ng-model="vm.messages.message" md-maxlength="200" rows="5" md-select-on-focus></textarea>
+    </md-input-container>
+    <md-button class="md-raised md-primary" ng-click="vm.submitMessage(vm.messages)">Submit</md-button>
+</md-content>
+
+<ul>
+    <li ng-repeat="message in vm.messagesReturned.list">{{message.name}}: {{message.message}}</li>
+</ul>
