@@ -1,17 +1,31 @@
 <!-- HTML here for your view -->
 
 <md-content layout-padding>
+    <h1>Messaging App</h1>
+    <h2>Enter Your Message</h2>
     <md-input-container layout="row">
         <label>Name</label>
         <input ng-model="vm.messages.name">
     </md-input-container>
-    <md-input-container layout="row" flex="100">
+    <md-input-container class="md-block" layout="row" flex="100">
       <label>Message</label>
       <textarea ng-model="vm.messages.message" md-maxlength="200" rows="5" md-select-on-focus></textarea>
     </md-input-container>
     <md-button class="md-raised md-primary" ng-click="vm.submitMessage(vm.messages)">Submit</md-button>
 </md-content>
 
-<ul>
-    <li ng-repeat="message in vm.messagesReturned.list">{{message.name}}: {{message.message}}</li>
-</ul>
+<md-divider ></md-divider>
+
+<md-content layout-padding>
+    <h2>Messages History</h2>
+    <md-list flex>
+        <md-list-item class="md-3-line" ng-repeat="message in vm.messagesReturned.list">
+            <img ng-src="https://placehold.it/50" class="md-avatar" alt="{{message.name}}" />
+            <div class="md-list-item-text" layout="column">
+                <h3>{{ message.name }}</h3>
+                <h4>{{ message.message }}</h4>
+                <p>{{ message.date | date: 'M/d/yy h:mm a' }}</p>
+            </div>
+        </md-list-item>
+    </md-list>
+</md-content>

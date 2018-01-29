@@ -20,7 +20,7 @@ myApp.service('MessagesService', ['$http', function($http){
     self.getMessages = function() {
         $http.get('/messages')
             .then(function(response){
-				console.log('get messages', response.data);
+				// console.log('get messages', response.data);
 				
                 self.messagesReturned.list = response.data;
             })
