@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Messaging App</title>   
+
+    <!-- Angular -->
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="vendors/angular-route.min.js" charset="utf-8"></script>
+
+    <!-- Angular Material -->
+    <link href="vendors/angular-material.min.css" rel="stylesheet" type="text/css">
+    <script src="vendors/angular-animate.min.js" charset="utf-8"></script>
+    <script src="vendors/angular-aria.min.js" charset="utf-8"></script>
+    <script src="vendors/angular-messages.min.js" charset="utf-8"></script>
+    <script src="vendors/angular-material.min.js" charset="utf-8"></script>
+
+    <!-- Client -->
+    <script src="scripts/client.js"></script>
+    <script src="scripts/controllers/messages.controller.js"></script>
+    <script src="scripts/services/messages.service.js"></script>
+
+    <!-- Vendors -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+
+</head>
+
+    <body ng-app="myApp">
+        {{vm.message}}
+        <!-- insert our nav template -->
+        <nav ng-include="'/views/templates/nav.template.html'"></nav>
+
+        <main ng-view>
+            <!-- view HTML will be loaded here -->
+        </main>
+    </body>
+</html>
