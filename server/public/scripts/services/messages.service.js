@@ -21,13 +21,23 @@ myApp.service('MessagesService', ['$http', function($http){
         $http.get('/messages')
             .then(function(response){
 				// console.log('get messages', response.data);
-				
                 self.messagesReturned.list = response.data;
             })
             .catch(function(response){
                 console.log('error on GET request');
             })
 	}
+
+    // delete message by Id
+    self.deleteMessage = function (messageId) {
+        $http.delete(`/messages/${messageId}`)
+        .then(function (response) {
+            self.getMessages();
+        })
+        .catch(function (response) {
+            console.log('error on deleteMessage :', response);
+        })
+    }
 
 	self.getMessages();
 

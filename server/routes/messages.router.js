@@ -35,5 +35,20 @@ router.get('/', (req, res) => {
     }); // end find
 }); // end route
 
+// delete message by id
+router.delete('/:id', (req, res) => {
+    let messageId = req.params.id;
+    Messages.findByIdAndRemove(
+        {'_id': messageId},
+        (error, removedDocument) => {
+            if(error) {
+                console.log('error on delete', error);
+                res.sendStatus(500);
+            } else {
+                // console.log('document has been removed', removedDocument);
+                res.sendStatus(200);
+            }
+        });
+}); // end delete route
 
 module.exports = router;

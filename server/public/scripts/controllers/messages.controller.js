@@ -10,9 +10,14 @@ myApp.controller("MessagesController", ['MessagesService', function(MessagesServ
 		MessagesService.getMessages();
 	}
 
-    // run the submitMessages function
-    self.submitMessage = function(message) {
+	// run the submitMessages function
+	self.submitMessage = function(message) {
 		MessagesService.submitMessage(message);
-	  }
+	}
+
+	// delete message
+	self.deleteMessage = function(messageId) {
+		MessagesService.deleteMessage(messageId);
+	}
 
 }]);
