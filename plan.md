@@ -7,3 +7,5 @@
 - [x] GET messages and display on successful POST
 
 - [x] Style with material
+
+- [ ] Add a delete message option
